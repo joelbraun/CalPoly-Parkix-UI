@@ -1,0 +1,298 @@
+﻿@model ParkixUI2.Models.AnalyticsModel
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <environment names="Development">
+
+        <title>@ViewData["Title"]</title>
+
+        <!-- Bootstrap -->
+        <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Font Awesome -->
+        <link href="~/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+        <!-- NProgress -->
+        <link href="~/lib/nprogress/nprogress.css" rel="stylesheet">
+        <!-- iCheck -->
+        <link href="~/lib/iCheck/skins/flat/green.css" rel="stylesheet">
+
+        <!-- bootstrap-progressbar -->
+        <link href="~/lib/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
+        <!-- JQVMap -->
+        <link href="~/lib/jqvmap/dist/jqvmap.min.css" rel="stylesheet" />
+        <!-- bootstrap-daterangepicker -->
+        <link href="~/lib/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+        <!-- Custom Theme Style -->
+        <link href="~/css/custom.css" rel="stylesheet">
+        <!-- jQuery -->
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <!-- Bootstrap -->
+        <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+        <!-- FastClick -->
+        <script src="~/lib/fastclick/lib/fastclick.js"></script>
+        <!-- NProgress -->
+        <script src="~/lib/nprogress/nprogress.js"></script>
+        <!-- Chart.js -->
+        <script src="~/lib/Chart.js/dist/Chart.min.js"></script>
+        <!-- gauge.js -->
+        <script src="~/lib/gauge.js/dist/gauge.min.js"></script>
+        <!-- bootstrap-progressbar -->
+        <script src="~/lib/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+        <!-- iCheck -->
+        <script src="~/lib/iCheck/icheck.min.js"></script>
+        <!-- Skycons -->
+        <script src="~/lib/skycons/skycons.js"></script>
+        <!-- Flot -->
+        <script src="~/lib/Flot/jquery.flot.js"></script>
+        <script src="~/lib/Flot/jquery.flot.pie.js"></script>
+        <script src="~/lib/Flot/jquery.flot.time.js"></script>
+        <script src="~/lib/Flot/jquery.flot.stack.js"></script>
+        <script src="~/lib/Flot/jquery.flot.resize.js"></script>
+        <!-- Flot plugins -->
+        <script src="~/lib/flot.orderbars/js/jquery.flot.orderBars.js"></script>
+        <script src="~/lib/flot-spline/js/jquery.flot.spline.min.js"></script>
+        <script src="~/lib/flot.curvedlines/curvedLines.js"></script>
+        <!-- DateJS -->
+        <script src="~/lib/DateJS/build/date.js"></script>
+        <!-- JQVMap -->
+        <script src="~/lib/jqvmap/dist/jquery.vmap.js"></script>
+        <script src="~/lib/jqvmap/dist/maps/jquery.vmap.world.js"></script>
+        <script src="~/lib/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
+        <!-- bootstrap-daterangepicker -->
+        <script src="~/lib/moment/min/moment.min.js"></script>
+        <script src="~/lib/bootstrap-daterangepicker/daterangepicker.js"></script>
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <!-- Custom Theme Scripts -->
+        <script src="~/js/custom.min.js"></script>
+    </environment>
+    <environment names="Staging,Production">
+        <title>@ViewData["Title"]</title>
+
+        <!-- Bootstrap -->
+        <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Font Awesome -->
+        <link href="~/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+        <!-- NProgress -->
+        <link href="~/lib/nprogress/nprogress.css" rel="stylesheet">
+        <!-- iCheck -->
+        <link href="~/lib/iCheck/skins/flat/green.css" rel="stylesheet">
+
+        <!-- bootstrap-progressbar -->
+        <link href="~/lib/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
+        <!-- JQVMap -->
+        <link href="~/lib/jqvmap/dist/jqvmap.min.css" rel="stylesheet" />
+        <!-- bootstrap-daterangepicker -->
+        <link href="~/lib/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+        <!-- Custom Theme Style -->
+        <link href="~/css/custom.css" rel="stylesheet">
+        <!-- jQuery -->
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <!-- Bootstrap -->
+        <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+        <!-- FastClick -->
+        <script src="~/lib/fastclick/lib/fastclick.js"></script>
+        <!-- NProgress -->
+        <script src="~/lib/nprogress/nprogress.js"></script>
+        <!-- Chart.js -->
+        <script src="~/lib/Chart.js/dist/Chart.min.js"></script>
+        <!-- gauge.js -->
+        <script src="~/lib/gauge.js/dist/gauge.min.js"></script>
+        <!-- bootstrap-progressbar -->
+        <script src="~/lib/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+        <!-- iCheck -->
+        <script src="~/lib/iCheck/icheck.min.js"></script>
+        <!-- Skycons -->
+        <script src="~/lib/skycons/skycons.js"></script>
+        <!-- Flot -->
+        <script src="~/lib/Flot/jquery.flot.js"></script>
+        <script src="~/lib/Flot/jquery.flot.pie.js"></script>
+        <script src="~/lib/Flot/jquery.flot.time.js"></script>
+        <script src="~/lib/Flot/jquery.flot.stack.js"></script>
+        <script src="~/lib/Flot/jquery.flot.resize.js"></script>
+        <!-- Flot plugins -->
+        <script src="~/lib/flot.orderbars/js/jquery.flot.orderBars.js"></script>
+        <script src="~/lib/flot-spline/js/jquery.flot.spline.min.js"></script>
+        <script src="~/lib/flot.curvedlines/curvedLines.js"></script>
+        <!-- DateJS -->
+        <script src="~/lib/DateJS/build/date.js"></script>
+        <!-- JQVMap -->
+        <script src="~/lib/jqvmap/dist/jquery.vmap.js"></script>
+        <script src="~/lib/jqvmap/dist/maps/jquery.vmap.world.js"></script>
+        <script src="~/lib/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
+        <!-- bootstrap-daterangepicker -->
+        <script src="~/lib/moment/min/moment.min.js"></script>
+        <script src="~/lib/bootstrap-daterangepicker/daterangepicker.js"></script>
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <!-- Custom Theme Scripts -->
+        <script src="~/js/custom.js"></script>
+
+    </environment>
+
+</head>
+<body class="nav-md">
+    <div class="container body">
+        <div class="main_container">
+            <div class="col-md-3 left_col menu_fixed">
+                <div class="left_col scroll-view">
+                    <div class="navbar nav_title" style="border: 0;">
+                        <img src="~/images/parkix.png" style="width:inherit;" />
+                    </div>
+
+                    <div class="clearfix"></div>
+
+                    <!-- /menu profile quick info -->
+
+                    <br />
+
+                    <!-- sidebar menu -->
+                    <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                        <div class="menu_section">
+                            <h3>View</h3>
+                            <ul class="nav side-menu" style="color:#fff; margin-left: 20px;">
+                                <li>
+                                    <div class="checkbox">
+                                        <label><input type="checkbox" checked value="">Student Schedules</label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label><input type="checkbox" checked value="">Weather trends</label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label><input type="checkbox" checked value="">Upcoming events</label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label><input type="checkbox" checked value="">Predictions</label>
+                                    </div>
+                                </li>
+
+                            </ul>
+
+                        </div>
+                        <div class="menu_section">
+                            <h3>Administration</h3>
+                            <ul class="nav side-menu">
+                                <li><a href="/Dashboard/Messages"><i class="fa fa-envelope"></i> Message Center <span class="label label-success pull-right">New</span></a></li>
+                                <li><a href="/Settings"><i class="fa fa-gears"></i> Settings <span class="label label-success pull-right"></span></a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    <!-- /sidebar menu -->
+                    <!-- /menu footer buttons -->
+                    <div class="sidebar-footer hidden-small">
+                        <a data-toggle="tooltip" data-placement="top" title="Settings">
+                            <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                        </a>
+                        <a data-toggle="tooltip" data-placement="top" title="FullScreen">
+                            <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
+                        </a>
+                        <a data-toggle="tooltip" data-placement="top" title="Lock">
+                            <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+                        </a>
+                        <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.html">
+                            <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+                        </a>
+                    </div>
+                    <!-- /menu footer buttons -->
+                </div>
+            </div>
+
+            <!-- top navigation -->
+            <div class="top_nav">
+                <div class="nav_menu">
+                    <nav>
+                        <ul class="nav navbar-left">
+                            <h2 style="padding-left: 10px;">Analytics Engine</h2>
+                        </ul>
+
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="">
+                                <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                    John Doe
+                                    <span class=" fa fa-angle-down"></span>
+                                </a>
+                                <ul class="dropdown-menu dropdown-usermenu pull-right">
+                                    <li><a href="javascript:;"> Profile</a></li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <span class="badge bg-red pull-right">50%</span>
+                                            <span>Settings</span>
+                                        </a>
+                                    </li>
+                                    <li><a href="javascript:;">Help</a></li>
+                                    <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                                </ul>
+                            </li>
+
+                            <li role="presentation" class="dropdown">
+                                <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
+                                    <i class="fa fa-envelope-o"></i>
+                                    <span class="badge bg-green">@Model.Messages.Count</span>
+                                </a>
+                                <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
+                                    @for (int i = 0; i < Model.Messages.Count; i++)
+                                    {
+                                        <li>
+                                            <a href="/Dashboard/ViewMessage?id=@i">
+                                                <span>
+                                                    <span>Parkix System</span>
+                                                    <span class="time">@Model.Messages[i].timestamp.ToString("MM/dd/yy hh:mm")</span>
+                                                </span>
+                                                <span class="message">
+                                                    @Model.Messages[i].message.Substring(0, 120);
+                                                </span>
+                                            </a>
+                                        </li>
+                                    }
+                                    <li>
+                                        <div class="text-center">
+                                            <a href="/Dashboard/Messages">
+                                                <strong>See All Alerts</strong>
+                                                <i class="fa fa-angle-right"></i>
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <!-- /top navigation -->
+
+            <div class="container body-content">
+                @RenderBody()
+            </div>
+            @RenderSection("Scripts", required: false)
+
+
+            <script>
+                $(function () {
+                    var chart = new Highcharts.Chart({
+                        chart: {
+                            renderTo: 'chart_container'
+                        },
+                        title: {
+                            text: 'Analytics Data - @DateTime.Now.ToString()'
+                        },
+
+                        series: [{
+                            data: @Model.ActualData,
+                            name: 'Recorded data'
+                        },
+                        {
+                            data: @Model.PredictedData,
+                            name: 'Predicted Trend'
+                        },
+                        {
+                            data: @Model.ScheduleData,
+                            name: 'Schedule Data'
+                        }]
+                    });
+                });
+            </script>
+</body>
+</html>

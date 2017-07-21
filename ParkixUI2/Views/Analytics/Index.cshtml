@@ -1,0 +1,153 @@
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/AnalyticsLayout.cshtml";
+}
+
+<div class="right_col" role="main">
+    <div class="">
+
+        <div class="clearfix"></div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="x_panel">
+                    <div id="chart_container" style="height: 400px"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4 col-sm-6 col-xs-12">
+        <div class="x_panel">
+            <div class="x_title">
+                <h2>Weather data <br/><small>San Luis Obispo, CA</small></h2>
+                <ul class="nav navbar-right panel_toolbox">
+                    <li>
+                        <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>
+                                <a href="#">Settings 1</a>
+                            </li>
+                            <li>
+                                <a href="#">Settings 2</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="close-link"><i class="fa fa-close"></i></a>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+                <div class="clearfix"></div>
+
+
+                <div class="row weather-days">
+                    @for (int i = 0; i < Model.Weather.Count; i++)
+                    {
+                        <div class="col-sm-2">
+                            <div class="daily-weather">
+                                <h2 class="day">@DateTime.Now.AddDays(i).ToString("dddd")</h2>
+                                <h3 class="degrees">@Model.Weather[i]</h3>
+                                <span>
+                                    <canvas class="clear-day" width="32" height="32"></canvas>
+                                </span>
+                            </div>
+                        </div>
+                    }
+
+
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6 col-xs-12">
+            <div class="x_panel">
+                <div class="x_title">
+                    <h2>Events 
+                        <br/><small>Anticipated to Impact Availability</small></h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                        <li>
+                            <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li>
+                                    <a href="#">Settings 1</a>
+                                </li>
+                                <li>
+                                    <a href="#">Settings 2</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="close-link"><i class="fa fa-close"></i></a>
+                        </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    @foreach (ParkixUI2.Models.Event e in Model.Events)
+                    {
+                        <article class="media event">
+                            <a class="pull-left date">
+                                <p class="month">@e.StartTime.ToString("MMMM ")</p>
+                                <p class="day">@e.StartTime.ToString("dd")</p>
+                            </a>
+                            <div class="media-body">
+                                <a class="title" href="#">@e.Title</a>
+                                <p>Beginning at @e.StartTime.ToString("HH:mm").</p>
+                            </div>
+                        </article>
+                    }
+                </div>
+            </div>
+
+
+        </div>
+
+    <div class="col-md-4 col-sm-6 col-xs-12">
+        <div class="x_panel">
+            <div class="x_title">
+                <h2>Export Data 
+                    <br/><small>View data and export trends</small></h2>
+                <ul class="nav navbar-right panel_toolbox">
+                    <li>
+                        <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>
+                                <a href="#">Settings 1</a>
+                            </li>
+                            <li>
+                                <a href="#">Settings 2</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="close-link"><i class="fa fa-close"></i></a>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+                <button>Download as CSV</button>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+
+

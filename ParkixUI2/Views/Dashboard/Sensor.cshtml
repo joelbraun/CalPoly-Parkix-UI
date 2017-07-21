@@ -1,0 +1,77 @@
+<div class="right_col" role="main">
+    <div class="">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>Sensor <small>@ViewData["id"] </small></h2>
+                        <div class="filter">
+                            <div id="reportrange" class="pull-right" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc">
+                                <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
+                                <span>December 30, 2014 - January 28, 2015</span> <b class="caret"></b>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">
+                        <div class="col-md-9 col-sm-12 col-xs-12">
+                            <div class="demo-container" style="height:280px">
+                                <div id="chart_plot_02" class="demo-placeholder"></div>
+                            </div>
+                            <div class="tiles">
+                                <div class="col-md-4 tile">
+                                    <span>Total Spots in Use</span>
+                                    <h2>67</h2>
+                                    <span class="sparkline11 graph" style="height: 160px;">
+                                        <canvas width="200" height="60" style="display: inline-block; vertical-align: top; width: 94px; height: 30px;"></canvas>
+                                    </span>
+                                </div>
+                                <div class="col-md-4 tile">
+                                    <span>Total Spots Available</span>
+                                    <h2>11</h2>
+                                    <span class="sparkline22 graph" style="height: 160px;">
+                                        <canvas width="200" height="60" style="display: inline-block; vertical-align: top; width: 94px; height: 30px;"></canvas>
+                                    </span>
+                                </div>
+                                <div class="col-md-4 tile">
+                                    <span>Percent Full</span>
+                                    <h2>@Model.CurrentPercentFull</h2>
+                                    <span class="sparkline11 graph" style="height: 160px;">
+                                        <canvas width="200" height="60" style="display: inline-block; vertical-align: top; width: 94px; height: 30px;"></canvas>
+                                    </span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-3 col-sm-12 col-xs-12">
+                            <div>
+                                <div class="x_title">
+                                    <h2>Statistics</h2>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="x_content">
+                                    <article class="media event">
+                                        <div class="media-body">
+                                            <a class="title" href="#">Total spots in lot: 6500</a>
+                                        </div>
+                                    </article>
+                                    <article class="media event">
+                                        <div class="media-body">
+                                            <a class="title" href="#">Current Fill Rate: @Model.CurrentPercentFull</a>
+                                        </div>
+                                    </article>
+                                    <article class="media event">
+                                        <div class="media-body">
+                                            <a class="title" href="#">Average Fill Rate (last 1 weeks): @Model.CurrentPercentFull</a>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

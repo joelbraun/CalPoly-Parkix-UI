@@ -1,0 +1,132 @@
+
+<div class="right_col" role="main">
+    <div class="">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>Campus Parking Status <small>All Lots - @DateTime.Now.ToString("M/dd/yyyy") </small></h2>
+                        <div class="filter">
+                            <div class="pull-right" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc">
+                                <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
+                                <span>July 14, 2017</span> <b class="caret"></b>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">
+                        <div class="col-md-9 col-sm-12 col-xs-12">
+                            <div class="demo-container" style="height:280px">
+                                <div id="chart_plot_02" class="demo-placeholder"></div>
+                            </div>
+                            <div class="tiles">
+                                <div class="col-md-4 tile">
+                                    <span>Total Spots in Use</span>
+                                    <h2>@Model.SpotsInUse</h2>
+                                    <span class="sparkline11 graph" style="height: 160px;">
+                                        <canvas width="200" height="60" style="display: inline-block; vertical-align: top; width: 94px; height: 30px;"></canvas>
+                                    </span>
+                                </div>
+                                <div class="col-md-4 tile">
+                                    <span>Total Spots Available</span>
+                                    <h2>@Model.SpotsAvailable</h2>
+                                    <span class="sparkline22 graph" style="height: 160px;">
+                                        <canvas width="200" height="60" style="display: inline-block; vertical-align: top; width: 94px; height: 30px;"></canvas>
+                                    </span>
+                                </div>
+                                <div class="col-md-4 tile">
+                                    <span>Percent Full</span>
+                                    <h2>@Model.CurrentPercentFull</h2>
+                                    <span class="sparkline11 graph" style="height: 160px;">
+                                        <canvas width="200" height="60" style="display: inline-block; vertical-align: top; width: 94px; height: 30px;"></canvas>
+                                    </span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-3 col-sm-12 col-xs-12">
+                            <div>
+                                <div class="x_title">
+                                    <h3>Events Impacting Availability</h3>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="x_content">
+                                    @foreach (ParkixUI2.Models.Event e in Model.Events)
+                                    {
+                                    <article class="media event">
+                                        <a class="pull-left date">
+                                            <p class="month">@e.StartTime.ToString("MMMM ")</p>
+                                            <p class="day">@e.StartTime.ToString("dd")</p>
+                                        </a>
+                                        <div class="media-body">
+                                            <a class="title" href="#">@e.Title</a>
+                                            <p>Beginning at @e.StartTime.ToString("HH:mm").</p>
+                                        </div>
+                                    </article>
+                                    }
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>At a Glance <small>Campus Parking Status</small></h2>
+                        <ul class="nav navbar-right panel_toolbox">
+                            <li>
+                                <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li>
+                                        <a href="#">Settings 1</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Settings 2</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="close-link"><i class="fa fa-close"></i></a>
+                            </li>
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">
+
+                        <div class="row" style="border-bottom: 1px solid #E0E0E0; padding-bottom: 5px; margin-bottom: 5px;">
+
+                            <div class="col-md-5">
+                                <div class="row" style="text-align: center;">
+                                    <div class="col-md-4">
+                                        <canvas id="canvasDoughnut1" class="canvasDoughnut1" height="110" width="110" style="margin: 5px 10px 10px 0"></canvas>
+                                        <h4 style="margin:0">Average Percentage Used (using Lot size)</h4>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <canvas id="canvasH1" class="canvasH1" height="110" width="110" style="margin: 5px 10px 10px 0"></canvas>
+                                        <h4 style="margin:0">Lot H1</h4>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <canvas id="canvasGE1" class="canvasGE1" height="110" width="110" style="margin: 5px 10px 10px 0"></canvas>
+                                        <h4 style="margin:0">Lot GE1</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
